@@ -1,0 +1,191 @@
+# PiPilot SDK
+
+A JavaScript/TypeScript SDK for the PiPilot Database and Storage API with full type safety support.
+
+## Installation
+
+```bash
+npm install pipilot-sdk
+```
+
+## Quick Start
+
+```javascript
+import { PiPilotClient } from 'pipilot-sdk';
+
+const client = new PiPilotClient({
+  apiKey: 'your-api-key',
+  databaseUrl: 'https://your-project.pipilot.dev'
+});
+
+// Query data
+const users = await client.from('users').select('*');
+
+// Insert data
+const newUser = await client.from('users').insert({
+  name: 'John Doe',
+  email: 'john@example.com'
+});
+```
+
+## Authentication
+
+Secure authentication with API key management and user session handling.
+
+```javascript
+// Initialize with API key
+const client = new PiPilotClient({
+  apiKey: process.env.PIPILOT_API_KEY
+});
+
+// User authentication
+const { user, session } = await client.auth.signIn({
+  email: 'user@example.com',
+  password: 'password'
+});
+```
+
+## Database Operations
+
+### CRUD Operations
+
+Complete Create, Read, Update, Delete operations with type safety.
+
+```typescript
+// Type-safe database operations
+interface User {
+  id: number;
+  name: string;
+  email: string;
+  created_at: string;
+}
+
+// Select with filtering
+const activeUsers = await client
+  .from<User>('users')
+  .select('*')
+  .eq('status', 'active');
+
+// Insert with type checking
+const newUser = await client
+  .from<User>('users')
+  .insert({
+    name: 'Jane Smith',
+    email: 'jane@example.com'
+  });
+
+// Update records
+const updatedUser = await client
+  .from<User>('users')
+  .update({ name: 'Jane Doe' })
+  .eq('id', 123);
+
+// Delete records
+await client
+  .from<User>('users')
+  .delete()
+  .eq('id', 123);
+```
+
+## File Upload and Storage
+
+Handle file uploads with automatic optimization and CDN delivery.
+
+```javascript
+// Upload a file
+const file = event.target.files[0];
+const { data, error } = await client.storage
+  .from('avatars')
+  .upload('user-123/avatar.jpg', file);
+
+// Get public URL
+const { data: publicUrl } = client.storage
+  .from('avatars')
+  .getPublicUrl('user-123/avatar.jpg');
+```
+
+## Real-time Subscriptions
+
+Subscribe to database changes in real-time.
+
+```javascript
+// Subscribe to table changes
+const subscription = client
+  .from('messages')
+  .on('INSERT', (payload) => {
+    console.log('New message:', payload.new);
+  })
+  .subscribe();
+
+// Subscribe to specific records
+const userSubscription = client
+  .from('users')
+  .on('UPDATE', { event: 'UPDATE', schema: 'public', table: 'users' })
+  .eq('id', userId)
+  .subscribe();
+```
+
+## TypeScript Support
+
+Full TypeScript support with generated types and IntelliSense.
+
+```typescript
+// Generated types from your database schema
+type Database = {
+  public: {
+    Tables: {
+      users: {
+        Row: {
+          id: number;
+          name: string;
+          email: string;
+          created_at: string;
+        };
+        Insert: {
+          name: string;
+          email: string;
+        };
+        Update: {
+          name?: string;
+          email?: string;
+        };
+      };
+    };
+  };
+};
+
+// Type-safe client
+const client = new PiPilotClient<Database>({
+  apiKey: 'your-api-key'
+});
+```
+
+## Error Handling
+
+Comprehensive error handling with detailed error messages.
+
+```javascript
+try {
+  const { data, error } = await client
+    .from('users')
+    .select('*')
+    .eq('status', 'active');
+
+  if (error) {
+    console.error('Database error:', error.message);
+    return;
+  }
+
+  console.log('Active users:', data);
+} catch (err) {
+  console.error('Network error:', err);
+}
+```
+
+<Note>
+The PiPilot SDK provides a type-safe, intuitive interface for interacting with PiPilot databases and storage, making it easy to build robust applications.
+</Note>
+
+<Tip>
+Use the SDK's TypeScript integration to get full type safety and autocompletion in your development environment.
+</Tip>

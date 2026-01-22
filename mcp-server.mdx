@@ -1,0 +1,99 @@
+# PiPilot MCP HTTP Server
+
+An HTTP-based Model Context Protocol (MCP) server that provides AI agents with seamless access to PiPilot database operations.
+
+## Overview
+
+The PiPilot MCP Server enables AI assistants like Claude, Cursor, VS Code, and Windsurf to interact with PiPilot databases using natural language queries through the Model Context Protocol.
+
+## Key Features
+
+### HTTP-Based Architecture
+
+- **RESTful API**: Standard HTTP endpoints for all database operations
+- **JSON Communication**: Structured data exchange between AI agents and databases
+- **Stateless Design**: Scalable architecture for high-performance applications
+
+### Natural Language Database Queries
+
+Transform complex SQL queries into simple conversational requests.
+
+```javascript
+// Instead of writing SQL:
+SELECT * FROM users WHERE status = 'active' AND created_at > '2024-01-01'
+
+// Just ask naturally:
+"Show me all active users created this year"
+```
+
+### Comprehensive Database Operations
+
+Full CRUD (Create, Read, Update, Delete) support for all PiPilot database features.
+
+- **Data Retrieval**: Query and filter data with natural language
+- **Data Modification**: Insert, update, and delete records conversationally
+- **Schema Exploration**: Understand database structure through AI assistance
+- **Relationship Navigation**: Traverse complex data relationships easily
+
+## Supported AI Assistants
+
+The MCP Server integrates seamlessly with popular AI development tools:
+
+### Claude
+- **Claude Desktop**: Direct integration with Anthropic's Claude
+- **Claude Code**: Enhanced coding capabilities with database access
+
+### Cursor
+- **AI Chat Integration**: Natural language database queries in Cursor
+- **Code Generation**: Generate database-driven code snippets
+
+### VS Code
+- **Extensions Support**: Compatible with VS Code MCP extensions
+- **Workspace Integration**: Database operations within your development environment
+
+### Windsurf
+- **IDE Integration**: Built-in support for PiPilot databases
+- **Workflow Automation**: Streamlined development with AI assistance
+
+## Getting Started
+
+### Installation
+
+```bash
+npm install @pipilot/mcp-server
+```
+
+### Configuration
+
+```javascript
+const { PiPilotMCPServer } = require('@pipilot/mcp-server');
+
+const server = new PiPilotMCPServer({
+  database: 'your-database-url',
+  apiKey: 'your-api-key',
+  port: 3000
+});
+
+server.start();
+```
+
+### Basic Usage
+
+```javascript
+// Query data naturally
+const users = await server.query("Find all users who signed up last month");
+
+// Insert new records
+await server.query("Add a new user named John Doe with email john@example.com");
+
+// Update existing data
+await server.query("Update John's email to john.doe@example.com");
+```
+
+<Warning>
+Ensure proper authentication and authorization when deploying the MCP Server in production environments.
+</Warning>
+
+<Tip>
+The MCP Server supports complex queries including joins, aggregations, and filtering through natural language, making database operations accessible to developers of all skill levels.
+</Tip>

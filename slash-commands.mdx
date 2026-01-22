@@ -1,0 +1,128 @@
+# Slash Commands System
+
+The slash command system provides instant access to powerful development tools and AI capabilities through a simple command interface.
+
+## How It Works
+
+PiPilot's slash commands use a simple `/` prefix to trigger powerful development actions. Simply type `/` followed by a command in the chat input to access various tools and capabilities.
+
+## Available Commands
+
+### Code Actions
+
+- `/fix`: Automatically fix code issues and bugs
+- `/refactor`: Refactor code for better maintainability
+- `/optimize`: Optimize code performance and efficiency
+- `/document`: Generate comprehensive code documentation
+
+### Development Tasks
+
+- `/test`: Generate and run comprehensive test suites
+- `/build`: Build and deploy your application
+- `/deploy`: Deploy to production environments
+- `/debug`: Debug and troubleshoot issues
+
+### AI Assistance
+
+- `/explain`: Get detailed explanations of code functionality
+- `/review`: Perform AI-powered code review
+- `/suggest`: Get intelligent code suggestions and improvements
+- `/generate`: Generate code from natural language descriptions
+
+### Project Management
+
+- `/plan`: Create detailed implementation plans for features
+- `/todo`: Manage and track development tasks
+- `/commit`: Generate meaningful commit messages
+- `/branch`: Handle Git branching and merging
+
+## Command Examples
+
+### Code Analysis
+```
+/explain This function handles user authentication
+/review The login component implementation
+/suggest Better error handling for this API call
+```
+
+### Development Workflow
+```
+/fix The TypeScript errors in this file
+/refactor Extract this component into smaller pieces
+/optimize This database query is running slowly
+/test Generate unit tests for the UserService
+```
+
+### Project Tasks
+```
+/plan Implement user registration feature
+/todo Add dark mode toggle to the UI
+/commit Fix authentication bug in login flow
+```
+
+## Advanced Features
+
+### Contextual Commands
+
+Commands automatically understand the context of your current work:
+
+- **File Context**: Commands work on the currently open file
+- **Selection Context**: Apply commands to selected code
+- **Project Context**: Understand your entire project structure
+
+### Chain Commands
+
+Combine multiple commands for complex workflows:
+
+```
+/fix && /test && /commit
+```
+
+### Custom Commands
+
+Create personalized commands for your specific workflow:
+
+```javascript
+// Custom command configuration
+{
+  "name": "deploy-prod",
+  "description": "Deploy to production with safety checks",
+  "steps": [
+    "/test",
+    "/build",
+    "/deploy production"
+  ]
+}
+```
+
+## Integration with AI
+
+Slash commands integrate seamlessly with PiPilot's AI capabilities:
+
+- **Natural Language**: Describe what you want to accomplish
+- **Intelligent Execution**: AI understands context and intent
+- **Feedback Loop**: Commands provide detailed feedback and suggestions
+
+## Best Practices
+
+### Command Usage
+
+1. **Be Specific**: Provide clear, detailed instructions
+2. **Use Context**: Reference specific files or functions when needed
+3. **Chain Wisely**: Combine related commands for efficiency
+4. **Review Output**: Always review AI-generated code before committing
+
+### Workflow Optimization
+
+- **Keyboard Shortcuts**: Use `/` to quickly access commands
+- **Command History**: Access previously used commands
+- **Favorites**: Mark frequently used commands as favorites
+- **Templates**: Save command combinations as templates
+
+<Warning>
+Always review the output of AI commands before applying changes to your codebase, especially for production deployments.
+</Warning>
+
+<Tip>
+The slash command system is designed to be intuitive and discoverable. Type `/` and explore the available commands to find the tools that best fit your workflow.
+</Tip>
