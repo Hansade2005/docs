@@ -8,6 +8,7 @@
     "dark": "#1D4ED8"
   },
   "favicon": "/favicon.svg",
+  "homepage": "introduction",
   "navigation": {
     "tabs": [
       {
@@ -16,7 +17,6 @@
           {
             "group": "Introduction",
             "pages": [
-              "index",
               "introduction"
             ]
           }
