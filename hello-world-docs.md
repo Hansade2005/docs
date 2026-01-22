@@ -1,39 +1,49 @@
-# Hello World - GitHub Docs
+# PiPilot GitHub Integration
 
-This tutorial teaches you GitHub essentials like repositories, branches, commits, and pull requests. You'll create your own Hello World repository and learn GitHub's pull request workflow, a popular way to create and review code.
+Learn how to integrate PiPilot with your GitHub repositories to enable AI-powered development workflows, automated code reviews, and seamless collaboration.
 
-## Prerequisites:
-- You must have a GitHub account.
-- You don't need to know how to code, use the command line, or install Git.
+## Prerequisites
+- A GitHub account with repository access
+- PiPilot account and API key
+- Basic understanding of Git and GitHub workflows
 
-## Step 1: Create a repository
-- Create a repository named "hello-world"
-- Add a README file
-- Select whether your repository will be Public or Private
+## Step 1: Connect Your GitHub Account
+- Navigate to your PiPilot dashboard settings
+- Go to "Integrations" and select "GitHub"
+- Authorize PiPilot to access your GitHub account
+- Choose repositories to connect or grant organization-wide access
 
-## Step 2: Create a branch
-- Create a new branch named "readme-edits"
-- This allows you to work on changes without affecting the main branch
+## Step 2: Configure Repository Settings
+- Enable PiPilot for selected repositories
+- Set up branch protection rules for AI-assisted reviews
+- Configure webhook notifications for PiPilot events
+- Define code quality standards and review requirements
 
-## Step 3: Make and commit changes
-- Edit the README.md file
-- Commit your changes with a descriptive message
+## Step 3: Enable AI-Powered Features
+- **Automated Code Reviews**: PiPilot analyzes pull requests for bugs, security issues, and best practices
+- **Intelligent Commit Messages**: Generate descriptive commit messages based on code changes
+- **Code Generation**: Use natural language prompts to generate code within your repository
+- **Documentation Updates**: Automatically update documentation when code changes
 
-## Step 4: Open a pull request
-- Compare your changes between branches
-- Create a pull request to propose your changes
+## Step 4: Set Up Development Workflows
+- Create custom PiPilot commands for your team's workflow
+- Configure automated testing and deployment triggers
+- Set up code quality gates and approval processes
+- Enable real-time collaboration features
 
-## Step 5: Merge your pull request
-- Merge your changes into the main branch
-- Delete the branch after merging
+## Step 5: Monitor and Optimize
+- Review PiPilot's impact on your development metrics
+- Adjust settings based on team feedback and performance
+- Explore advanced features like custom AI agents and integrations
 
-By completing this tutorial, you've learned to create a project and make a pull request on GitHub. You've learned how to:
-- Create a repository
-- Start and manage a new branch
-- Change a file and commit those changes to GitHub
-- Open and merge a pull request
+## Key Features
+- **Conversational Development**: Interact with your codebase using natural language
+- **Multi-Framework Support**: Native support for Next.js, Vite+React, and Expo
+- **Enterprise Integrations**: Seamless connection with GitHub, Vercel, Netlify, and more
+- **AI-Powered Tools**: Intelligent code generation, analysis, and optimization
 
-## Next steps:
-- Take a look at your GitHub profile
-- Try the GitHub Skills "Introduction to GitHub" course
-- Learn about setting up your profile and basic Markdown syntax
+## Next Steps
+- Explore PiPilot's SDK for custom integrations
+- Set up team-specific workflows and templates
+- Learn about advanced AI agent configurations
+- Join the PiPilot community for best practices and support
