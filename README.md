@@ -1,43 +1,51 @@
-# PiPilot Starter Kit
+# PiPilot Documentation
 
-Use the starter kit to get your docs deployed and ready to customize.
+Welcome to the official PiPilot documentation repository. This documentation covers PiPilot's AI-powered development platform, featuring conversational coding, multi-framework support, and advanced development tools.
 
-Click the green **Use this template** button at the top of this repo to copy the PiPilot starter kit. The starter kit contains examples with
+## What's Included
 
-- Guide pages
-- Navigation
-- Customizations
-- API reference pages
-- Use of popular components
+This documentation includes comprehensive guides for:
 
-**[Follow the full quickstart guide](https://starter.mintlify.com/quickstart)**
+- **Introduction**: Overview of PiPilot and its PIXEL FORGE technology
+- **Features**: Conversational AI, voice integration, and visual editing capabilities
+- **Supported Frameworks**: Next.js, Vite+React, and Expo integration
+- **Core Capabilities**: File operations, AI-driven development tools, and project management
+- **SWE Agent**: Autonomous GitHub App for collaborative development
+- **Integrations**: Seamless connections with GitHub, Vercel, Netlify, Supabase, and Stripe
+- **MCP Server**: HTTP-based Model Context Protocol server for AI assistants
+- **SDK**: JavaScript/TypeScript SDK with full type safety
+- **Slash Commands**: Quick access to development tools and AI capabilities
 
 ## Development
 
-Install the [PiPilot CLI](https://www.npmjs.com/package/mint) to preview your documentation changes locally. To install, use the following command:
+To preview documentation changes locally, use Mintlify's development server:
 
-```
-npm i -g mint
-```
-
-Run the following command at the root of your documentation, where your `docs.json` is located:
-
-```
-mint dev
+```bash
+npm i -g mintlify
+mintlify dev
 ```
 
 View your local preview at `http://localhost:3000`.
 
-## Publishing changes
+## Deployment
 
-Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app) to propagate changes from your repo to your deployment. Changes are deployed to production automatically after pushing to the default branch.
+Documentation is automatically deployed when changes are pushed to the main branch. The site is built using Mintlify's documentation platform.
 
-## Need help?
+## Contributing
 
-### Troubleshooting
+To contribute to the PiPilot documentation:
 
-- If your dev environment isn't running: Run `mint update` to ensure you have the most recent version of the CLI.
-- If a page loads as a 404: Make sure you are running in a folder with a valid `docs.json`.
+1. Fork this repository
+2. Create a feature branch for your changes
+3. Make your documentation updates
+4. Submit a pull request
 
-### Resources
-- [PiPilot documentation](https://mintlify.com/docs)
+## Resources
+
+- [PiPilot Website](https://pipilot.dev)
+- [PiPilot GitHub](https://github.com/pipilot)
+- [Mintlify Documentation](https://mintlify.com/docs)
+
+## Need Help?
+
+For questions about PiPilot or this documentation, please visit our [support channels](https://pipilot.dev/support) or create an issue in this repository.
